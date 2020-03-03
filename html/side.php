@@ -74,7 +74,9 @@ $link_target = 'main';
 			<fieldset>
 				<legend>Quick Search:</legend>
 				<input type='hidden' name='navbarsearch' value='1'>
-				<input type='text' name='host' size='15' class="NavBarSearchItem">
+				<input type='text' name='host' size='15' placeholder='Host' class='NavBarSearchItem'>
+				<input type='text' name='servicefilter' size='15' placeholder='Service' class='NavBarSearchItem'>
+				<input type='submit' hidden>
 			</fieldset>
 		</form>
 	</div>

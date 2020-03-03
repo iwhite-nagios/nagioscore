@@ -19,7 +19,6 @@ services:
          - nagios-plugins-bin:/var/www/plugins
         depends_on:
          - nagioscore
-         - plugins-bin:/var/www/plugins
     apache:
         container_name: apache
         image: httpd:latest
