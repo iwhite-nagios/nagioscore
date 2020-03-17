@@ -2,7 +2,6 @@
 // HELPER UTILITIES
 
 require_once(dirname(__FILE__).'/../config.inc.php');
-
 // get enable_page_tour no matter what
 function get_enable_page_tour(){
 	global $cfg;
@@ -147,9 +146,7 @@ function read_main_config_file($thefile=""){
 		// open main config file for reading...
 		if(($fh=@fopen($fname,'r'))!=FALSE){
 			// read all lines in the config file
-			while(!feof($fh)){
-				$s=fgets($fh);
-				
+			while(false !== $s = fgets($fh)) {
 				// skip comments
 				if($s[0]=='#')
 					continue;
@@ -209,10 +206,8 @@ function read_cgi_config_file($thefile=""){
 			
 		// open cgi config file for reading...
 		if(($fh=@fopen($fname,'r'))!=FALSE){
-			// read all lines in the config file
-			while(!feof($fh)){
-				$s=fgets($fh);
-				
+            // read all lines in the config file
+            while(false !== $s = fgets($fh)) {
 				// skip comments
 				if($s[0]=='#')
 					continue;
@@ -275,14 +270,12 @@ function read_status_file($thefile="",$maxlines=0){
 	$x=0;
 	if(($fh=@fopen($fname,'r'))!=FALSE){
 		// read all lines
-		while(!feof($fh)){
+        while(false !== $s = fgets($fh)) {
 
 			$x++;
 			if($maxlines>0 && $x>$maxlines)
 				break;
 
-			$s=fgets($fh);
-			
 			// skip comments
 			if($s[0]=='#')
 				continue;
@@ -398,14 +391,12 @@ function read_retention_file($thefile="",$maxlines=0){
 	$x=0;
 	if(($fh=@fopen($fname,'r'))!=FALSE){
 		// read all lines
-		while(!feof($fh)){
+		while(false !== $s = fgets($fh)) {
 
 			$x++;
 			if($maxlines>0 && $x>$maxlines)
 				break;
 
-			$s=fgets($fh);
-			
 			// skip comments
 			if($s[0]=='#')
 				continue;
